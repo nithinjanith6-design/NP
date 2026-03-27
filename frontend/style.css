@@ -1,0 +1,221 @@
+/* Vanilla CSS - Premium Dark Theme styling */
+:root {
+  --primary-bg: #0d1117;
+  --secondary-bg: #161b22;
+  --text-main: #c9d1d9;
+  --accent: #58a6ff;
+  --accent-hover: #1f6feb;
+  --border: #30363d;
+  --success: #2ea043;
+  --error: #f85149;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--primary-bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: var(--secondary-bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  color: var(--accent);
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Sections */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+/* About */
+#about p {
+  font-size: 1.1rem;
+  max-width: 800px;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background-color: var(--secondary-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(88, 166, 255, 0.2);
+}
+
+.skill-card h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+/* Contact Form */
+.form-container {
+  background-color: var(--secondary-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.input-group input, 
+.input-group textarea {
+  padding: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background-color: var(--primary-bg);
+  color: var(--text-main);
+  font-family: inherit;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.3);
+}
+
+button[type="submit"] {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--accent-hover);
+}
+
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* Status Message Animation */
+#statusMessage {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#statusMessage.hidden {
+  display: none;
+}
+
+#statusMessage.show {
+  display: block;
+  opacity: 1;
+}
+
+#statusMessage.success {
+  background-color: rgba(46, 160, 67, 0.1);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+#statusMessage.error {
+  background-color: rgba(248, 81, 73, 0.1);
+  color: var(--error);
+  border: 1px solid var(--error);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.8s ease-out backwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
